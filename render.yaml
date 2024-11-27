@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: your-app-name
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: DB_CONNECTION_STRING
+        fromDatabase:
+          name: your-database-name
+          property: connectionString
+
+databases:
+  - name: your-database-name
+    databaseName: your_database
+    user: your_database_user
+    plan: free
